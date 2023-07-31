@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { loginFailure, loginStart } from "../../features/user";
 import { Error, Success } from "../../components/Toast";
 import { ToastContainer } from "react-toastify";
+import { FaPlusSquare } from "react-icons/fa";
 
 const MentorReqForm = () => {
     const [id, setId] = useState(null)
@@ -58,7 +59,9 @@ const MentorReqForm = () => {
                         className="left-content d-flex flex-column"
                         style={{ gap: "5px" }}
                     >
-                        <Link to={`/ShowReq/${id}`}>View Mentoring Opportunity</Link>
+                        <h5>
+                            <Link to={`/ShowReq/${id}`}>View Mentoring Request</Link>
+                        </h5>
                         <h5>Settings</h5>
                         <h5>Terms and Privacy</h5>
                         <div>
@@ -68,7 +71,7 @@ const MentorReqForm = () => {
                                 style={{ color: "#007580" }}
                                 to={'/PostOpp'}
                             >
-                                <AiFillPlusSquare />
+                                <FaPlusSquare className="add-opp" />
                             </Link>
                         </div>
                     </div>
@@ -163,10 +166,10 @@ const MentorReqForm = () => {
                             </div>
                             <div className="select-check">
                                 <div className="checked-list">
-                                    <div className="check">
+                                    <div className="check1">
                                         <label
                                             htmlFor="input-radio"
-                                            className="label-title checked-input name-input"
+                                            className="label-title checked-input name-input check"
                                         >
                                             <span
                                                 className="me-2"
@@ -199,7 +202,7 @@ const MentorReqForm = () => {
                                         name="amount"
                                         value={amount}
                                         id="amount"
-                                        type="text"
+                                        // type="text"
                                         className="input-data"
                                         placeholder="example"
                                     />

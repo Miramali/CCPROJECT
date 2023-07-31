@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './style.css'
 import Mentor from '../../pages/menteeProfile/index';
 import Mentee from '../../pages/mentorProfile/index';
+import Logo from '../logo';
 
 const Wizard = () => {
   const options = [
@@ -17,12 +18,18 @@ const Wizard = () => {
   const [choose, setChoose] = useState("")
   if (choose === "mentee") {
     return (
-      <Mentee options={options} choose={choose} setChoose={setChoose} />
+      <>
+        <Logo />
+        <Mentee options={options} choose={choose} setChoose={setChoose} />
+      </>
     );
 
   } else {
     return (
-      <Mentor options={options} choose={choose} setChoose={setChoose} />
+      <>
+        <Logo />
+        <Mentor options={options} choose={choose} setChoose={setChoose} />
+      </>
     );
   };
 }

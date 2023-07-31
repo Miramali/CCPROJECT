@@ -26,15 +26,16 @@ const dispatch = useDispatch();
       const response = await axios.post(
         `${Localhost}/api/v1/subscribe`,
         { email: input },
-        {
-          withCredentials: true,
-        }
+        // {
+        //   // withCredentials: true,
+        // }
       );
       setMessage(response.data);
     } catch (error) {
       setMessage('Failed to send email initaivion');
     }
   }
+  
   const getUser = async () => {
     try {
       const url = `http://localhost:5000/auth/login/success`;

@@ -1,15 +1,24 @@
 .parent {
     text-align: center;
     display: flex;
-    min-height: 100vh;
+    min-height: 88vh;
     align-items: center;
     justify-content: center;
+}
+
+.form {
+    align-items: center;
 }
 
 /* start register */
 .register-head {
     text-align: left;
     margin-bottom: 40px;
+}
+
+.register-head p {
+    color: #000000;
+    font-weight: 500;
 }
 
 @media (min-width: 567px) {
@@ -25,13 +34,17 @@
     position: relative;
 }
 
-.login-form .reg {
+.signup-social-holder {
+    margin: 40px 0;
+}
+
+.signup {
     width: 100px;
     background-color: #007580;
     color: #fafafa;
-    /* margin-right: 0px;
-      margin-bottom: 30px !important; */
-    margin: 0px;
+    border-radius: 30px;
+    margin: 0px 30px 0 0;
+
 }
 
 @media (min-width: 567px) {
@@ -65,10 +78,6 @@
 }
 
 .signup-social .soc-log-btn {
-    /* background-color: #000000;
-      border-radius: 50%;
-      width: 32px;
-      height: 32px; */
     background-color: transparent;
     width: 32px;
     margin: 0 5px;
@@ -84,7 +93,7 @@
     color: #fafafa;
     font-size: 30px;
     border-radius: 50%;
-    padding: 5px;
+    padding: 5px 0;
     margin: 0 10px;
 }
 

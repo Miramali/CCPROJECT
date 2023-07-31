@@ -3,12 +3,8 @@ const Comment = require("../Models/commentsModel");
 const mentorApplication = require('../Models/opportunityModel')
 
 const addComment = async (req, res, next) => {
-   console.log("object :>> ");
   try {
-   
-
     const id = req.params.mentorApplicationId;
-
     const newComment = new Comment({ ...req.body, userId: req.user.id, mentorApplicationId: id });
     const savedComment = await newComment.save();
     res.status(200).send(savedComment);

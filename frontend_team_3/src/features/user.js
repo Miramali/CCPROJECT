@@ -26,11 +26,11 @@ export const userSlice = createSlice({
       state.loading = false;
       state.error = false;
     },
-    
+
   },
 });
 
-export const { loginStart, loginSuccess, loginFailure, logout} =
+export const { loginStart, loginSuccess, loginFailure, logout } =
   userSlice.actions;
 
 export default userSlice.reducer;

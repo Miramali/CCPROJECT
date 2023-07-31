@@ -19,15 +19,13 @@ const ProfileSchema = new mongoose.Schema(
       trim: true,
     },
     phone: {
+      type: String, 
+      trim: true
+    },
+    about: [{
       type: String,
       trim: true,
-    },
-    about: [
-      {
-        type: String,
-        trim: true,
-      },
-    ],
+    }],
     location: {
       type: String,
       trim: true,
@@ -37,20 +35,24 @@ const ProfileSchema = new mongoose.Schema(
       type: Array,
       default: [],
     },
-    avatar: {
+    avatar1: {
       type: String,
-      default: "../uploads/avatar_1689333300642.jpg",
+      default:"",
+      
     },
+    avatar:{
+      type:String,
+    },
+
     yearsOfExperence: {
       type: Number,
     },
-    expertise: [
-      {
-        name: { type: String, trim: true },
-        from: { type: Number, max: 2024, min: 1900 },
-        to: { type: Number, max: 2024, min: 1900 },
-      },
-    ],
+    
+    expertise: [{
+      name: { type: String, trim: true },
+      from: { type: Number, max: 2024, min: 1900 },
+      to: { type: Number, max: 2024, min: 1900 },
+    }],
     currentCompany: {
       type: String,
       trim: true,
@@ -60,23 +62,18 @@ const ProfileSchema = new mongoose.Schema(
       default: false,
     },
     user: {
-      type: mongoose.Schema.Types.ObjectId,
+      type: mongoose.Types.ObjectId,
       ref: "User",
       unique: true,
       required: true,
     },
-    dealtWith: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User",
-      },
-    ],
-    busyDays: [
-      {
-        from: { type: Date },
-        to: { type: Date },
-      },
-    ],
+    dealtWith: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+    }],
+    busyDays: [{
+      from: { type: Date }, to: { type: Date }
+    }]
   },
   { timestamps: true }
 );
@@ -96,7 +93,6 @@ ProfileSchema.methods.updateRole = async function (mentor) {
   }
 }
 
-const ProfileModel =
-  mongoose.models.Profile || mongoose.model("Profile", ProfileSchema);
+const Profile = mongoose.model("Profile", ProfileSchema);
 
-module.exports = ProfileModel;
+module.exports = Profile;

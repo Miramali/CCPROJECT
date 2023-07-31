@@ -11,23 +11,23 @@ import { Localhost } from '../../../config/api';
 
 const FilterMenotrs = (props) => {
     const [filterMentor, setFilterMentor] = useState([]);
-  const user = useSelector((state) => state.currentUser);
-  const dispatch = useDispatch();
+    const user = useSelector((state) => state.currentUser);
+    const dispatch = useDispatch();
 
-  useEffect(() => {
-    const getMentors = async () => {
-      
-      await axios
-        .get(`${Localhost}/api/v1/mentorProfile`, { withCredentials: true })
-        .then((res) => {
-          setFilterMentor(res.data);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    };
-    getMentors();
-  }, []);
+    useEffect(() => {
+        const getMentors = async () => {
+
+            await axios
+                .get(`${Localhost}/api/v1/mentorProfile`, { withCredentials: true })
+                .then((res) => {
+                    setFilterMentor(res.data);
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+        };
+        getMentors();
+    }, []);
     let filterProductList = filterMentor.filter((mentor) => {
         let rating = mentor;
         props.arrValue.forEach((item, index) => {
@@ -49,7 +49,7 @@ const FilterMenotrs = (props) => {
                     return <div className='col-md-4 col-12 pt-4' key={mentorOne._id}>
                         {/* Mentor Persons */}
                         <div className={`mentorPersons mentorPersons position-relative`}>
-                            <img src={img0}/>
+                            <img src={img0} />
                             <div className=' info bg-white d-inline-flex  justify-content-center align-items-center rounded position-absolute bottom-0 start-0 ms-2 mb-2 p-1'>
                                 <BiSolidStar className='text-main-color  text-small' />
                                 <span className='fw-bold  text-small'>{mentorOne.rating}</span>

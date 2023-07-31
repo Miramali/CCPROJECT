@@ -4,12 +4,14 @@ import { faFileCsv, faLocationDot, faBriefcase, faDollarSign } from '@fortawesom
 import { faClock } from '@fortawesome/free-regular-svg-icons'
 import '../../pages/showOpp/style.css'
 import axios from 'axios'
+// import './style.css'
 import { Localhost } from '../../config/api'
 // import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 
 const Opp = () => {
    const [data, setData] = useState([])
+   const [dataInfo, setDataInfo] = useState([])
    const { id } = useParams()
 
    useEffect(() => {
@@ -19,6 +21,7 @@ const Opp = () => {
                withCredentials: true,
             });
             setData(Array.isArray(response.data) ? response.data : [response.data]);
+            setDataInfo([response.data[0].owner]);
             console.log(response.data)
          } catch (error) {
             console.log(error);
@@ -40,14 +43,15 @@ const Opp = () => {
                </div>
                <div className='mb-5 text-capitalize'>
                   <h3 className='fw-bold'>{item.title}</h3>
-                  {item.getHired ? (
-                     <h4 className='fw-bold'>Get mentored by : <span className='data1'>Belal Shwani</span></h4>
-                  ) : ''}
+                  {dataInfo.map((item) => (
+                     <h4 className='fw-bold'>Get mentored by : <span className='data1'>{item.name}</span></h4>
+                  ))}
                   <div className='lh-base des'>
                      <p>{item.description}</p>
                   </div>
 
                   <div className='d-flex flex-wrap my-3 text-capitalize'>
+                     {/* <div className='flex'> */}
 
                      {item.getHired && (<p className='info1 my-2 '>
                         <span className='me-1'><FontAwesomeIcon icon={faFileCsv} className='fa-2xl' /> certificate :</span>
@@ -74,6 +78,7 @@ const Opp = () => {
                      <span className='me-1'><FontAwesomeIcon icon={faDollarSign} className='fa-2xl' /> paid :</span>
                      <span className='data1'>{item.paid.amount} {item.paid.currency} </span>
                   </p>
+                  {/* </div> */}
 
                   <p className='info1 my-2'>
                      <span className='me-1'><FontAwesomeIcon icon={faClock} className='fa-2xl' /> duration :</span>

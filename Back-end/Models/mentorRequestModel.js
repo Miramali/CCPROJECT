@@ -22,7 +22,7 @@ const requestSchema = new mongoose.Schema(
     },
     paid: {
       isPaid: { type: Boolean, default: false },
-      amount: { type: Number, default: 0 },
+      amount: { type: Number },
       currency: { type: String, default: "EGP" }
     },
     experience: [{ type: String }],
@@ -38,9 +38,15 @@ const requestSchema = new mongoose.Schema(
       enum: ["open", "in progress", "close"],
       default: "open"
     },
+    profile: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+      ref: "Profile",
+    },
     owner: {
       type: mongoose.Schema.Types.ObjectId,
       required: true,
+      ref: 'User'
     },
     acceptedBy: {
       type: mongoose.Schema.Types.ObjectId,

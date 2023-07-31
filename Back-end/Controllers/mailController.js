@@ -7,12 +7,12 @@ exports.mail = async (req, res, next) => {
 
     const { fname, lastname, email, phone, message } = req.body.formData;
     const newContact = new Contact({
-       fname,
-       lastname,
-       email,
-       phone,
-       message
-});
+        fname,
+        lastname,
+        email,
+        phone,
+        message
+    });
     try {
         let transporter = nodemailer.createTransport({
             service: 'Gmail',

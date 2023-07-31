@@ -1,5 +1,4 @@
 
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import { useState } from "react";
 import { BiSolidDownArrow } from "react-icons/bi";
 import { GiCancel } from "react-icons/gi";
@@ -7,7 +6,7 @@ import { BiError } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
-import { toast } from 'react-toastify';
+import './style.css'
 import { Localhost } from "../../config/api";
 import { loginFailure, loginStart, loginSuccess } from "../../features/user";
 import { Error, Success } from "../../components/Toast";
@@ -28,20 +27,20 @@ const Mentee = ({ options, choose, setChoose }) => {
         skills: false,
         location: false,
     });
-     
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
         dispatch(loginStart());
         const addNewMentee = async () => {
-            
+
             try {
-                await axios.post(`${Localhost}/api/v1/menteeProfile`, profile,  { withCredentials: true });
+                await axios.post(`${Localhost}/api/v1/menteeProfile`, profile, { withCredentials: true });
                 const userInfo = { ...user, role: 'mentor' }
                 if (file) {
                     const formData = new FormData();
                     formData.append('cv', file);
-                    await axios.post(`${Localhost}/api/v1/cv/upload/${user._id}`, formData,  { withCredentials: true })
+                    await axios.post(`${Localhost}/api/v1/cv/upload/${user._id}`, formData, { withCredentials: true })
 
                 }
                 dispatch(loginSuccess(userInfo));
@@ -65,7 +64,7 @@ const Mentee = ({ options, choose, setChoose }) => {
         const { name } = e.target;
         setErros((prev) => ({
             ...prev,
-            [name]: e.target.value.trim().length === 0,
+            [name]: e.target.value.trim()?.length === 0,
         }));
     };
 
@@ -107,12 +106,12 @@ const Mentee = ({ options, choose, setChoose }) => {
                                 <BiSolidDownArrow />
                             </div>
 
-<select className="data" 
-                            placeholder="select type" 
-                            style={{ background: 'transparent' }}
-                            onChange={ e=>setProfile({
-                                ...profile, designation: e.target.value
-                            }) } >
+                            <select className="data"
+                                placeholder="select type"
+                                style={{ background: 'transparent' }}
+                                onChange={e => setProfile({
+                                    ...profile, designation: e.target.value
+                                })} >
                                 <option className="choose2">Computer science</option>
                                 <option className="choose1">Engineering</option>
                                 <option className="choose2">Artificial Intelligence</option>

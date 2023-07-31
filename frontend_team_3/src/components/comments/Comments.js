@@ -5,7 +5,7 @@ import axios from "axios";
 import { useSelector } from "react-redux";
 import { Localhost } from "../../config/api";
 import { useDispatch } from "react-redux";
-const Comments = ({id}) => {
+const Comments = ({ id }) => {
   const [inputComment, setInputComments] = useState("");
   const [comment, setComments] = useState([]);
   const [replie, setReplies] = useState([]);
@@ -59,17 +59,17 @@ const Comments = ({id}) => {
       try {
         // Fetch comments
         const commentRes = await axios.get(
-          `http://localhost:5000/api/v1/comment/${id}`,
+          `${Localhost}/api/v1/comment/${id}`,
           { withCredentials: true }
         );
         const allComments = commentRes.data.map((comment) => {
           return { ...comment, children: [] };
         });
         setComments(allComments);
- 
+
         // Fetch replies
         const replyRes = await axios.get(
-          `http://localhost:5000/replie/${id}`,
+          `${Localhost}/replie/${id}`,
           { withCredentials: true }
         );
         const allReplies = replyRes.data;
@@ -96,9 +96,8 @@ const Comments = ({id}) => {
     console.log(comment);
 
     try {
-      const url = `http://localhost:5000/api/v1/comment/4567879`;
       await axios.post(
-        `http://localhost:5000/api/v1/comment/${id}`,
+        `${Localhost}/api/v1/comment/${id}`,
         {
           desc: inputComment,
         },

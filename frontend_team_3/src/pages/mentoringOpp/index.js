@@ -7,6 +7,7 @@ import { loginFailure, loginStart } from "../../features/user";
 import { Localhost } from "../../config/api";
 import { Link } from "react-router-dom";
 import { Error, Success } from "../../components/Toast";
+import MyNavbar from "../../components/layout/navbar/Navbar";
 
 const MentoringOpportunityForm = () => {
   const [OppId, setOppId] = useState(null)
@@ -52,10 +53,13 @@ const MentoringOpportunityForm = () => {
   };
   return (
     <div className="parent">
+      {/* <MyNavbar/> */}
       <div className="container">
         <div className="row">
           <div className="div1 d-none d-lg-block col-lg-2">
-            <Link to={`/ShowOpp/${OppId}`}>View Mentoring Opportunity</Link>
+            <span>
+              <Link to={`/ShowOpp/${OppId}`}>View Mentoring Opportunity</Link>
+            </span>
             <span>Settings</span>
             <span>Terms and Privacy</span>
             <br />
@@ -71,7 +75,7 @@ const MentoringOpportunityForm = () => {
             <section className="mentoring-opportunity">
               <div className="mentoring-opportunity-container">
                 <div className="mentoring-opportunity-div1">
-                  <p style={{ fontSize: '19px', padding: '5px' }}>Mentoring opportunity</p>
+                  <p style={{ fontSize: '19px', padding: '5px', color: '#fff' }}>Mentoring opportunity</p>
                 </div>
                 <form className="mentoring-opportunity-form w-md-100">
                   <label className="mentor-oppor-label">
@@ -93,24 +97,25 @@ const MentoringOpportunityForm = () => {
                     placeholder="example"
                     onChange={(e) => setDescription(e.target.value)}
                   ></textarea>
-                  <label className="mentor-oppor-label1">Certificate</label>
-                  <select className="mentor-oppor-input1 mentor-select1 border-bottom border-warning-subtle border-2" onChange={(e) => setCertificate(e.target.value)}>
-                    <option value={true}>Awarded</option>
-                    <option value={false}>NOT Awarded</option>
-                    <option value={true}>Awarded</option>
-                  </select>
-                  <label className="mentor-oppor-label1">Duration</label>
-                  <select className="mentor-oppor-input1 mentor-select2 border-bottom border-warning-subtle border-2" onChange={(e) => setDuration(e.target.value)}>
-                    <option value={3}>3 months</option>
-                    <option value={2}>2 months</option>
-                    <option value={1}>1 months</option>
-                  </select>
+                  <div className="certi">
+                    <label className="mentor-oppor-label1">Certificate</label>
+                    <select className="mentor-oppor-input1 mentor-select1 border-bottom border-warning-subtle border-2" onChange={(e) => setCertificate(e.target.value)}>
+                      <option value={true}>Awarded</option>
+                      <option value={false}>NOT Awarded</option>
+                      <option value={true}>Awarded</option>
+                    </select>
+                    <label className="mentor-oppor-label1">Duration</label>
+                    <select className="mentor-oppor-input1 mentor-select2 border-bottom border-warning-subtle border-2" onChange={(e) => setDuration(e.target.value)}>
+                      <option value={3}>3 months</option>
+                      <option value={2}>2 months</option>
+                      <option value={1}>1 months</option>
+                    </select>
+                  </div>
                   <br />
                   <label className="mentor-oppor-label1">Location &nbsp;</label>
                   <select className="mentor-oppor-input1 mentor-select3 border-bottom border-warning-subtle border-2" onChange={(e) => setLocation(e.target.value)}>
-                    <option value='Cairo'>Cairo</option>
-                    <option value='Giza'>Giza</option>
-                    <option value='Alex'>Alex</option>
+                    <option value='Remote'>Remote</option>
+                    <option value='onsite'>onsite</option>
                   </select>
                   <span className="mentor-span0">Might get hired</span>
                   <input
@@ -121,29 +126,32 @@ const MentoringOpportunityForm = () => {
                   <span className="checkboxtexr"></span>
                   <br />
                   <br />
-                  <label className="mentor-oppor-label1">Paid</label>
-                  <input
-                    className="form-check-input mgh-inp mgh-inp2"
-                    type="checkbox"
-                    onChange={(e) => setPaid(e.target.checked)}
-                  ></input>
-                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <div className="d-inline-block par-opp">
-                    <label className="mentor-oppor-span lab-1">Amount</label>
+                  <div className="paidDiv">
+
+                    <label className="mentor-oppor-label1 paid">Paid</label>
                     <input
-                      className="mentor-oppor-input1 mentor-input2 border-bottom border-warning-subtle border-2"
-                      type="number"
-                      placeholder="example"
-                      onChange={(e) => setAmount(e.target.value)}
-                    />
-                  </div>
-                  <div className="d-inline-block par-opp">
-                    <label className="mentor-oppor-span">Currency</label>
-                    <select className="mentor-oppor-input1 mentor-select4 border-bottom border-warning-subtle border-2" onChange={(e) => setCurrency(e.target.value)}>
-                      <option value='usd'>USD</option>
-                      <option value='pound'>POUND</option>
-                      <option value='kwd'>KWD</option>
-                    </select>
+                      className="form-check-input mgh-inp mgh-inp2"
+                      type="checkbox"
+                      onChange={(e) => setPaid(e.target.checked)}
+                    ></input>
+                    {/* &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; */}
+                    <div className="d-inline-block par-opp">
+                      <label className="mentor-oppor-span lab-1">Amount</label>
+                      <input
+                        className="mentor-oppor-input1 mentor-input2 border-bottom border-warning-subtle border-2"
+                        type="number"
+                        placeholder="example"
+                        onChange={(e) => setAmount(e.target.value)}
+                      />
+                    </div>
+                    <div className="d-inline-block par-opp">
+                      <label className="mentor-oppor-span">Currency</label>
+                      <select className="mentor-oppor-input1 mentor-select4 border-bottom border-warning-subtle border-2" onChange={(e) => setCurrency(e.target.value)}>
+                        <option value='usd'>USD</option>
+                        <option value='pound'>POUND</option>
+                        <option value='kwd'>KWD</option>
+                      </select>
+                    </div>
                   </div>
                   <label className="mentor-oppor-label">Responsibilities</label>
                   <input

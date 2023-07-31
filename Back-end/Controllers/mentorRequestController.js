@@ -2,7 +2,11 @@ const { Request } = require("../Models/mentorRequestModel");
 
 // postRequests////////////////////////
 const postRequests = (req, res) => {
-  const request = new Request({ ...req.body, owner: req.user._id });
+  const request = new Request({
+    ...req.body,
+    owner: req.user.id,
+    profile: req.profile._id
+  });
   request
     .save()
     .then((request) => {
@@ -20,10 +24,10 @@ const getRequests = (req, res) => {
       if (!request) {
         return res.status(404).send("Unable to find user");
       }
-      request.forEach(req=>{
+      request.forEach(req => {
         req.checkIsClosed(req)
       })
-      res.status(200).send(request);
+      res.status(200).send([request]);
     })
     .catch((e) => {
       res.status(500).send(e.message);
@@ -33,13 +37,16 @@ const getRequests = (req, res) => {
 // getRequestByID///////////////////
 const getRequestsByID = (req, res) => {
   const _id = req.params.id;
-  Request.findById(_id)
+  Request.findById(_id).populate({
+    path: "owner profile",
+    select: "-tokens",
+  })
     .then((request) => {
       if (!request) {
         return res.status(404).send("Unable to find user");
       }
       request.checkIsClosed(request)
-      res.status(200).send(request);
+      res.status(200).send([request]);
     })
     .catch((e) => {
       res.status(500).send(e.message);
@@ -49,12 +56,12 @@ const getRequestsByID = (req, res) => {
 // getRequestByOwnerId///////////////////
 const getRequestsByOwnerId = (req, res) => {
   const _id = req.params.id;
-  Request.find({owner: _id})
+  Request.find({ owner: _id })
     .then((request) => {
       if (!request) {
         return res.status(404).send("No requests found");
       }
-      request.forEach(req=>{
+      request.forEach(req => {
         req.checkIsClosed(req)
       })
       res.status(200).send(request);
@@ -91,7 +98,7 @@ const deleteRequests = async (req, res) => {
     if (!request) {
       return res.status(404).send("Unable to find request");
     }
-    if(request.progress != "open") return res.status(400).send(`Cannot delete, this request is already ${request.progress}`)
+    if (request.progress != "open") return res.status(400).send(`Cannot delete, this request is already ${request.progress}`)
     await Request.findByIdAndDelete(_id);
     res.status(200).send('successfully deleted');
   } catch (e) {

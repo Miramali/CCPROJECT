@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const Profile = require("../Models/ProfileModel");
 
 // create schema
 const opportunitySchema = new mongoose.Schema({
@@ -13,16 +12,13 @@ const opportunitySchema = new mongoose.Schema({
         trim: true,
         required: [true, 'Description is required'],
     },
-    certificate: {
-        type: Boolean,
-        default: false
-    },
+    certificate: [{ type: String }],
     duration: {
         type: Number,
         required: [true, 'Duration in days required']
     },
     time: {
-      start: { type: Date }, end: { type: Date }
+        start: { type: Date }, end: { type: Date }
     },
     location: {
         type: String,
@@ -47,6 +43,11 @@ const opportunitySchema = new mongoose.Schema({
         required: true,
         ref: 'User'
     },
+    profile: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: "Profile",
+    },
     progress: {
         type: String,
         default: "open",
@@ -62,8 +63,8 @@ const opportunitySchema = new mongoose.Schema({
 }, { timestamp: true }
 );
 
-opportunitySchema.methods.checkIsClosed = function(opp){
-    if(new Date(opp.time.end) < new Date()){
+opportunitySchema.methods.checkIsClosed = function (opp) {
+    if (new Date(opp.time.end) < new Date()) {
         console.log('closing opportunity ', opp.title)
         opp.progress = 'close';
         opp.save();

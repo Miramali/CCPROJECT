@@ -16,7 +16,6 @@ const Comment = ({ com, user, rep, addReply ,id}) => {
   };
   const handleSubmit = async () => {
     try {
-      const url = `http://localhost:5000/api/v1/comment/4567879`;
       await axios.post(
         `http://localhost:5000/replie/${id}`,
         {

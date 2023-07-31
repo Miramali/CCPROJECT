@@ -5,13 +5,6 @@ const request = require("../Models/mentorRequestModel");
 exports.getProfileCalendar = async (req, res) => {
   try {
     const profile = await Profile.find({ user: req.user.id });
-    //   console.log(profile);
-    //   const today = new Date();
-    //   const year = today.getFullYear();
-    //   const month = today.getMonth() + 1;
-    //   const daysInMonth = new Date(year, month, 0).getDate();
-    //   const monthName = today.toLocaleString("default", { month: "long" });
-
     const startdate = profile.busyDays
       ? new Date(profile.busyDays?.from).getDate()
       : 18;

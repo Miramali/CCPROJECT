@@ -8,16 +8,6 @@ import { useSelector } from "react-redux";
 import axios from "axios";
 import { Localhost } from "../../config/api";
 function Profile({ Id }) {
-  // const [fileContent, setFileContent] = useState('');
-
-  // useEffect(() => {
-  //   fetch('../../../public/profile/index.html')
-  //     .then((response) => response.text())
-  //     .then((data) => setFileContent(data))
-  //     .catch((error) => console.error(error));
-  // }, []);
-
-  // return <div dangerouslySetInnerHTML={{ __html: fileContent }} />;
   const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   const months = [
     "January",
@@ -53,7 +43,6 @@ function Profile({ Id }) {
     }; // console.log(calendardate.busyDays);
     calendarbusy();
   });
-  const [value, onChange] = useState(new Date());
   const [profileType, setProfileType] = useState(true);
   const { id } = useParams();
   const [sender, setSender] = useState([
@@ -90,6 +79,7 @@ function Profile({ Id }) {
     setSearchTerm(event.target.value);
   };
   const { currentUser } = useSelector((state) => state);
+  // console.log(currentUser)
 
   // Filter the messages based on the search term
   const filteredMessages = messages.filter((message) =>
@@ -112,13 +102,13 @@ function Profile({ Id }) {
                 <Link to="">Terms and Privacys</Link>
               </li>
             </ul>
-            <h5 className="">
+            <p className="">
               {profileType ? (
                 <Link to="">My Requests</Link>
               ) : (
                 <Link to="">My Oppourtunities</Link>
               )}
-            </h5>
+            </p>
             <button className="bg-none">
               {profileType ? "Post a new Requests" : "Post a new Oppourtunity"}
               <i
@@ -145,8 +135,8 @@ function Profile({ Id }) {
                 alt="userImage"
                 className="w-25 h-25 rounded-circle"
               />
-              <h4 className="fs-5 pt-4">User Name</h4>
-              <h5 className="fs-6 p-1">JobTitle</h5>
+              <h4 className="fs-5 pt-4">{currentUser.name}</h4>
+              <h5 className="fs-6 p-1">{calendardate?.profile[0].designation}</h5>
               <span className="text-white text-uppercase">
                 {currentUser.role}
               </span>
@@ -200,7 +190,7 @@ function Profile({ Id }) {
                         Company
                       </label>
                       <br />
-                      <span>SEF Future</span>
+                      <span>{calendardate?.profile[0].currentCompany}</span>
                     </div>
                   ) : (
                     <div>
@@ -215,10 +205,10 @@ function Profile({ Id }) {
                 <div className="col">
                   <div>
                     <label htmlFor="phone" style={{ color: "#007580" }}>
-                      Phone Number:
+                      yearsOfExperence:
                     </label>
                     <br />
-                    <span>01111111111</span>
+                    <span>{calendardate?.profile[0].yearsOfExperence} years</span>
                   </div>
                   <div>
                     <label htmlFor="email" style={{ color: "#007580" }}>
@@ -249,19 +239,26 @@ function Profile({ Id }) {
                   Experience
                 </h5>
                 <div className="d-flex justify-content-between">
-                  <span>Software enigneer at sfe</span>
+                  <span>{calendardate?.profile[0].expertise.map((item) => (
+                    <p>{item.name}</p>
+                  ))}</span>
                   <span style={{ color: "#007580" }}>2016-2019</span>
                 </div>
               </div>
-              <div className="--user-skills mt-3">
-                <h5 style={{ color: "#007580", fontSize: "15px" }}>Skills</h5>
-                <div className="col-3 mt-4">
-                  <span>Html</span>
-                  <span>js</span>
-                  <span>css</span>
-                  <span>react</span>
-                </div>
-              </div>
+              {
+                profileType ? '' : (
+                  <div className="--user-skills mt-3">
+                    <h5 style={{ color: "#007580", fontSize: "15px" }}>Skills</h5>
+                    <div className="col-3 mt-4">
+                      {
+                        calendardate?.profile[0].skills.map((item) => (
+                          <span>{item}</span>
+                        ))
+                      }
+                    </div>
+                  </div>
+                )
+              }
               {profileType ? (
                 <div>
                   <h5
@@ -525,9 +522,8 @@ function Profile({ Id }) {
               })}
               <div className="d-flex flex-column gap-2">
                 <button
-                  className={`${
-                    msgBtnClicked ? "d-none" : "d-flex justify-content-center"
-                  } btn btn-warning`}
+                  className={`${msgBtnClicked ? "d-none" : "d-flex justify-content-center"
+                    } btn btn-warning`}
                   onClick={() => setMsgBtnClicked(!msgBtnClicked)}
                 >
                   New Message

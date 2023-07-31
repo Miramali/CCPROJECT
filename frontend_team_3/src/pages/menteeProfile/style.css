@@ -1,0 +1,16 @@
+.title-text {
+    font-size: 24px;
+}
+
+.head p {
+    color: #000;
+    font-weight: 400;
+}
+
+.data {
+    border-color: #e6dda6;
+}
+
+.data:focus {
+    border-color: #e6dda6;
+}

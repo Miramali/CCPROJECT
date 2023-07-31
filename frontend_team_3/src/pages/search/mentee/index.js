@@ -129,13 +129,13 @@ const SearchMentee = () => {
                 <div>
                   <button
                     onClick={addSkill}
-                    className="d-inline-block mt-4 border-0 bg-secondaryColor-op text-white rounded"
+                    className="d-inline-block mt-4 border-0 bg-secondaryColor-op text-white rounded pad"
                   >
                     Add
                   </button>
                   <button
                     onClick={handleReset}
-                    className="d-inline-block mt-4 ms-4 border-0 bg-secondaryColor-op text-white rounded"
+                    className="d-inline-block mt-4 ms-4 border-0 bg-secondaryColor-op text-white rounded pad"
                   >
                     Reset
                   </button>

@@ -1,258 +1,79 @@
-/* /* .parent {
+.parent {
   display: flex;
   justify-content: center;
 }
+
 .div1 {
-  /* width: 15%;
-  padding-top: 4%; */
-  /* text-align: left; */
-  /* padding: 60px 0px !important; */
-/* } */
-/* .div2 { */
-  /* min-width: 55%; */
-  /* text-align: left; */
-/* } */
-/* .div1 span { */
-  /* display: block;
-  margin-top: 16px; */
-  /* display: block;
-  margin-top: 16px;
+  text-align: left;
+  /* margin-right: 20px; */
+  padding: 60px 0px !important;
+}
+
+.div2 {
+  text-align: left;
+}
+
+.div1 span {
+  display: block;
+  margin-top: 8px;
   font-size: 14px;
-  font-weight: bold; */
-/* } */
-/* .add-opp {
+  /* white-space: nowrap; */
+  width: 200px;
+  font-weight: bold;
+}
+
+.row {
+  --bs-gutter-x: 3rem
+}
+
+.paidDiv {
+  display: flex;
+  align-items: center;
+}
+
+.add-opp {
   background-color: #fafafa;
   color: #007580;
+  font-size: 17px;
+  margin-top: 0;
 }
+
+.add-opp-del {
+  /* background-color: #fafafa; */
+  color: #007580;
+  margin-top: 0;
+}
+
+.add-opp-postin {
+  position: relative;
+  top: -14px;
+  /* padding: 1%; */
+}
+
 .mentoring-opportunity-container {
   background-color: #f2f2f2;
   border-radius: 20px;
   min-height: 1000px;
   width: 100%;
 }
-.mentoring-opportunity-div1 {
-  background-color: #007580;
-  font-size: 16px;
-  font-weight: bold;
-  padding: 10px 50px 0px 100px;
-  float: right;
-  border-radius: 0px 20px 0px 80px;
-  color: #fafafa; */
-/* } */
-/* .mentoring-opportunity-form { */
-  /* padding-top: 60px; */
-/* } */
-/* .mentor-oppor-label,
-.mentor-oppor-input,
-.mentor-oppor-label1,
-.mentor-oppor-input1,
-.mentor-oppor-span,
-.mentor-oppor-span2,
-.mentor-span0 {
-  font-size: 16px;
-  color: #007580;
-  font-weight: bold;
-  display: block;
-  padding: 9px;
-  margin: 5px 20px;
-  border-radius: 10px;
-  border: 0px;
-}
-.mentor-oppor-label1,
-.mentor-oppor-input1,
-.mentor-oppor-span,
-.mentor-oppor-span2,
-.mentor-span0 {
-  display: inline;
-  margin: 15px 20px;
-}
-textarea {
-  width: 90%;
-} */
-/* .mentor-imputa {
-  display: inline-block;
-  font-size: 25px;
-  color: #007580;
-} */
-/* .checkboxtext {
-  font-size: 110%;
-  display: inline;
-  color: #007580;
-}
-.par-opp {
-  position: relative;
-}
-.mentor-oppor-span {
-  /* position: absolute;
-  top: -10px;
-  left: 25px; */
-/* } */
-/* .par-opp input {
-  width: 80%;
-}
-.par-opp select {
-  width: 50%;
-}
-.mentor-oppor-span2 {
-  display: inline-block;
-  margin: 5px 0px 0px 330px;
-}
-.pac {
-  display: flex;
-  align-items: center;
-}
-.mentor-input1,
-.mentor-input2 {
-  width: 40%;
-}
-.mentor-input4,
-.mentor-input5,
-.mentor-input6 {
-  width: 60%;
-}  */
-/* .mentor-select1,
-.mentor-select2,
-.mentor-select3 {
-  width: 23%; */
-  /* max-width: 400px;
-} */
-/* .mentor-select4 {
-  width: 18%;
-}
-.mentor-submit {
-  background-color: #007f8b;
-  font-size: 16px;
-  padding: 5px 20px;
-  float: right;
-  border-radius: 40px;
-  color: #fafafa;
-  margin: 20px;
-}
-.mentor-submit:hover {
-  background-color: #015f68;
-}
-.sub-btn {
-  display: flex;
-  justify-content: flex-end;
-  margin: 25px 30px;
-}
-.mgh-inp {
-  width: 17px !important;
-  height: 17px !important;
-  background-color: #fed049;
-  border: none;
-}
-.mgh-inp1 {
-  position: relative;
-  top: 20px;
-}
-.mgh-inp2 {
-  position: relative;
-  top: 45px;
-}
-.form-check-input {
-  width: 20px !important;
-  height: 20px !important;
-  color: white;
-}
-.form-check-input:checked {
-  background-color: #fed049 !important;
-  color: #fafafa !important;
-  outline: none !important;
-} */
-/* start media query mob screen */
-/* @media (max-width: 567px) {
-  .border-2 {
-    border-width: 2px !important;
-    width: 80%;
-    margin-bottom: 20px;
-  }
-  .lab-1 {
-    display: inline-block;
-    margin-bottom: -9px;
-    margin-top: 20px;
-  } */
-  /* .form-check-input { */
-    /* width: 20px !important;
-  }
-  .mgh-inp1 {
-    position: relative;
-    top: 0px;
-  }
-  .mgh-inp2 {
-    position: relative;
-    top: 0px;
-  }
-  .sub-btn {
-    justify-content: center;
-  }
-  .mentor-submit {
-    width: 300px;
-    padding: 10px;
-  }
-}  */
 
-/* end media query mob screen */ */
-
-
-.parent {
-  display: flex;
-  justify-content: center;
-}
-.div1 {
-  /* width: 15%;
-  padding-top: 4%; */
-  text-align: left;
-  padding: 60px 0px !important;
-}
-.div2 {
-  /* min-width: 55%; */
-  text-align: left;
-}
-.div1 span {
-  /* display: block;
-  margin-top: 16px; */
-  display: block;
-  margin-top: 16px;
-  font-size: 14px;
-  font-weight: bold;
-}
-.add-opp {
-  background-color: #fafafa;
-  color: #007580;
-  margin-top: 0;
-}
-.add-opp-del{
-/* background-color: #fafafa; */
-  color: #007580;
-  margin-top: 0;
- }
-.add-opp-postin {
- position: relative;
- top: -14px;
- /* padding: 1%; */
-}
-.mentoring-opportunity-container {
-  background-color: #f2f2f2;
-  border-radius:20px ;
-  min-height: 1000px;
-  width: 100%;
-}
 .mentoring-opportunity-div1 {
   background-color: #007580;
   font-size: 16px;
   font-weight: bold;
   /* padding: 10px 50px 0px 100px;
     */
-    padding: 0.2rem 5rem;
+  padding: 0.2rem 5rem;
   float: right;
   border-radius: 0px 20px 0px 80px;
   color: #fafafa;
 }
+
 .mentoring-opportunity-form {
   padding-top: 60px;
- }
- 
+  background-color: #f8f8f8;
+}
+
 .mentor-oppor-label,
 .mentor-oppor-input,
 .mentor-oppor-label1,
@@ -266,15 +87,15 @@ textarea {
   display: block;
   padding: 11px;
   margin: 5px 20px;
-  border-radius: 10px 10px 0 0 ;
+  border-radius: 10px 10px 0 0;
   border: 0px;
-  -webkit-border-radius: 10px 10px 0 0 ;
-  -moz-border-radius: 10px 10px 0 0 ;
-  -ms-border-radius: 10px 10px 0 0 ;
-  -o-border-radius: 10px 10px 0 0 ;
+  -webkit-border-radius: 10px 10px 0 0;
+  -moz-border-radius: 10px 10px 0 0;
+  -ms-border-radius: 10px 10px 0 0;
+  -o-border-radius: 10px 10px 0 0;
   text-transform: capitalize;
-  
 }
+
 .mentor-oppor-label1,
 .mentor-oppor-input1,
 .mentor-oppor-span,
@@ -283,9 +104,25 @@ textarea {
   display: inline;
   margin: 15px 20px;
 }
+
 .mentor-span0Color {
-color: #79B4B9;
+  color: #79B4B9;
 }
+
+.paid {
+  margin: 8px 21px -4px 23px;
+}
+
+.certi {
+  margin-top: 20px;
+}
+
+.mgh-inp2 {
+  position: relative;
+  top: 4px;
+  left: -2%
+}
+
 textarea {
   width: 90%;
   resize: none;
@@ -293,53 +130,64 @@ textarea {
   pointer-events: none;
   overflow: hidden;
 }
- option,  select {
+
+option,
+select {
   outline: none;
   border: none;
 }
- 
+
 .checkboxtext {
   font-size: 110%;
   display: inline;
   color: #007580;
 }
+
 .par-opp {
   position: relative;
 }
- 
+
 .par-opp input {
   width: 90%;
-  margin-right: 9.5rem ;
+  margin-right: 9.5rem;
 }
+
 .par-opp select {
   width: 50%;
 }
+
 .mentor-oppor-span2 {
   display: inline-block;
   margin: 5px 0px 0px 330px;
 }
+
 .pac {
   display: flex;
   align-items: center;
 }
+
 .mentor-input1,
 .mentor-input2 {
   width: 40%;
 }
+
 .mentor-input4,
 .mentor-input5,
 .mentor-input6 {
   width: 60%;
 }
+
 .mentor-select1,
 .mentor-select2,
 .mentor-select3 {
   width: 24%;
   max-width: 400px;
 }
+
 .mentor-select4 {
   width: 18%;
 }
+
 .mentor-submit {
   background-color: #007f8b;
   font-size: 16px;
@@ -349,36 +197,38 @@ textarea {
   color: #fafafa;
   margin: 20px;
 }
+
 .mentor-submit:hover {
   background-color: #015f68;
 }
+
 .sub-btn {
   display: flex;
   justify-content: flex-end;
   margin: 25px 30px;
 }
+
 .mgh-inp {
   width: 17px !important;
   height: 17px !important;
   /* background-color: #ffffff; */
- background-color: #fed049;
+  background-color: #fed049;
   border: 2px solid #fed049 !important;
 }
+
 .mgh-inp1 {
   position: relative;
   top: 25px;
   left: -2%;
 }
-.mgh-inp2 {
-  position: relative;
-  top: 21px;
-  left: -2%;
-}
+
+
 .form-check-input {
   width: 20px !important;
   height: 20px !important;
   color: white;
- }
+}
+
 .form-check-input:checked {
   background-color: #fed049 !important;
   color: #fafafa !important;
@@ -387,17 +237,20 @@ textarea {
 }
 
 .color-bgd-223 {
-      background-color: white !important;
-      opacity: 100% !important;
-      color: #79B4B9 !important;
+  background-color: white !important;
+  opacity: 100% !important;
+  color: #79B4B9 !important;
 }
-.mentor-oppor-input1-sizing{
+
+.mentor-oppor-input1-sizing {
   margin-left: 1%;
 }
-.par-opp input{
+
+.par-opp input {
   width: 90%;
 }
-.mentor-oppor-input1-sizing-amount{
+
+.mentor-oppor-input1-sizing-amount {
   margin: -3%;
 }
 
@@ -405,73 +258,85 @@ textarea {
 @media (max-width: 567px) {
 
   .mentoring-opportunity-div1 {
-   padding: 0.2rem 1.4rem;
+    padding: 0.2rem 1.4rem;
     /* padding: 0.2rem 1.8rem; */
-   width: 98%;
-   text-align: right;
+    width: 98%;
+    text-align: right;
   }
+
   .border-2 {
     border-width: 2px !important;
-    width: 80% !important ;
+    width: 80% !important;
     margin-bottom: 20px;
     background-color: white !important;
   }
-  .border-22{
+
+  .border-22 {
     width: 90% !important;
     /* margin-right: 30%; */
   }
-  .border-223{
+
+  .border-223 {
     width: 100% !important;
     background-color: white !important;
     opacity: 100% !important;
     color: #79B4B9 !important;
   }
 
-.par-opp input {
-   width: 80%;
-   margin-right:unset;
-}
-.par-opp input {
-  width: 80%;
-}
-.mentor-oppor-input1-sizing {
-  margin-left: 6%;
-}
+  .par-opp input {
+    width: 80%;
+    margin-right: unset;
+  }
 
- .mentor-span0Color{
-  width: 100%;
- /* margin-right: auto; */
-  margin-right:30%;
-}
-.mentor-span0011{
-  width: 100%;
- /* margin-right: auto; */
-  margin-right: 56%;
+  .par-opp input {
+    width: 80%;
+  }
 
-}
+  .mentor-oppor-input1-sizing {
+    margin-left: 6%;
+  }
+
+  .mentor-span0Color {
+    width: 100%;
+    /* margin-right: auto; */
+    margin-right: 30%;
+  }
+
+  .mentor-span0011 {
+    width: 100%;
+    /* margin-right: auto; */
+    margin-right: 56%;
+
+  }
 
   .lab-1 {
     display: inline-block;
     margin-bottom: -9px;
     margin-top: 20px;
   }
+
   .form-check-input {
     width: 20px !important;
   }
+
   .mgh-inp1 {
     position: relative;
     top: 0px;
   }
+
   .mgh-inp2 {
     position: relative;
     top: 0px;
   }
+
   .sub-btn {
     justify-content: center;
   }
+
   .mentor-submit {
     width: 300px;
     padding: 10px;
   }
 }
+
 /* end media query mob screen */

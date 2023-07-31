@@ -294,6 +294,7 @@ import axios from "axios";
 import { loginFailure, loginStart, loginSuccess } from "../../features/user";
 import { Localhost } from "../../config/api";
 import { Success, Error } from "../../components/Toast";
+import Logo from "../../components/logo";
 
 const Resgister = () => {
 
@@ -448,113 +449,117 @@ const Resgister = () => {
   };
 
   return (
-    <div className="parent">
-      <div className="auth-form-container">
-        <div className="register-head">
-          <h2>Create a new account</h2>
-          <p>Basic account informatin</p>
-        </div>
-        <form className="login-form d-flex flex-column" onSubmit={handleSubmit}>
-          <div className="inp-holder">
-            <div className="inp-container">
-              <input
-                className="inp-field"
-                value={name}
-                onChange={changeNameInput}
-                type="text"
-                placeholder="Name"
-                id="name"
-              />
-              <FaExclamationTriangle id="error3" className="error-triangle" />
-            </div>
-
-            <div className="pass-container">
-              <input
-                className="inp-field pass"
-                value={pass}
-                onChange={changePassInput}
-                type={passType}
-                placeholder="Password"
-                id="password"
-              // name="password"
-              />
-              <span
-                id="icon-pass-2"
-                className="toggle"
-                onClick={togglePassword}
-              >
-                {show}
-              </span>
-              <FaExclamationTriangle id="error4" className="error-triangle" />
-            </div>
-
-            <div className="inp-container">
-              <input
-                className="inp-field"
-                value={emial}
-                onChange={changeEmailInput}
-                type="email"
-                placeholder="Email"
-                id="email"
-              />
-              <FaExclamationTriangle id="error5" className="error-triangle" />
-            </div>
-
-            <div className="pass-container">
-              <input
-                className="inp-field pass"
-                value={confPass}
-                onChange={changeConfirmPassInput}
-                type={passType2}
-                placeholder="Confirm password"
-                id="conf-password"
-              // name="conf-password"
-              />
-              <span
-                id="icon-pass-3"
-                className="toggle"
-                onClick={togglePassword2}
-              >
-                {show2}
-              </span>
-              <FaExclamationTriangle id="error6" className="error-triangle" />
-            </div>
+    <>
+      <Logo />
+      <div className="parent">
+        <div className="auth-form-container">
+          <div className="register-head">
+            <h2>Create a new account</h2>
+            <p>Basic account informatin</p>
           </div>
-          <div className="signup-social-holder">
-            <button type="submit" onClick={checkAuth}>
-              <p className="btn rounded-pill my-3 reg">Sign Up</p>
-            </button>
-            <div className="signup-social d-flex">
-              <p>Or sign up with </p>
-              <div className="social-icons">
-                <button className="soc-log-btn" onClick={github}>
-                  <FaLinkedinIn />
-                </button>
-                <button className="soc-log-btn" onClick={google}>
-                  <FaGoogle />
-                </button>
-                <button className="soc-log-btn" onClick={facebook}>
-                  <FaFacebookF />
-                </button>
+          <form className="login-form d-flex flex-column" onSubmit={handleSubmit}>
+            <div className="inp-holder">
+              <div className="inp-container">
+                <input
+                  className="inp-field"
+                  value={name}
+                  onChange={changeNameInput}
+                  type="text"
+                  placeholder="Name"
+                  id="name"
+                />
+                <FaExclamationTriangle id="error3" className="error-triangle" />
+              </div>
+
+              <div className="pass-container">
+                <input
+                  className="inp-field pass"
+                  value={pass}
+                  onChange={changePassInput}
+                  type={passType}
+                  placeholder="Password"
+                  id="password"
+                // name="password"
+                />
+                <span
+                  id="icon-pass-2"
+                  className="toggle"
+                  onClick={togglePassword}
+                >
+                  {show}
+                </span>
+                <FaExclamationTriangle id="error4" className="error-triangle" />
+              </div>
+
+              <div className="inp-container">
+                <input
+                  className="inp-field"
+                  value={emial}
+                  onChange={changeEmailInput}
+                  type="email"
+                  placeholder="Email"
+                  id="email"
+                />
+                <FaExclamationTriangle id="error5" className="error-triangle" />
+              </div>
+
+              <div className="pass-container">
+                <input
+                  className="inp-field pass"
+                  value={confPass}
+                  onChange={changeConfirmPassInput}
+                  type={passType2}
+                  placeholder="Confirm password"
+                  id="conf-password"
+                // name="conf-password"
+                />
+                <span
+                  id="icon-pass-3"
+                  className="toggle"
+                  onClick={togglePassword2}
+                >
+                  {show2}
+                </span>
+                <FaExclamationTriangle id="error6" className="error-triangle" />
               </div>
             </div>
-          </div>
-        </form>
+            <div className="signup-social-holder">
+              <button type="submit" onClick={checkAuth} className="signup">
+                Sign Up
+                {/* <p className="btn rounded-pill my-3 reg">Sign Up</p> */}
+              </button>
+              <div className="signup-social d-flex">
+                <p>Or sign up with </p>
+                <div className="social-icons">
+                  <button className="soc-log-btn" onClick={github}>
+                    <FaLinkedinIn />
+                  </button>
+                  <button className="soc-log-btn" onClick={google}>
+                    <FaGoogle />
+                  </button>
+                  <button className="soc-log-btn" onClick={facebook}>
+                    <FaFacebookF />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
 
-        <div className="switch-register">
-          <p>I accept privacy terms and conditions </p>
-          {/* <input type="checkbox" value={"Accept"} id="accept" name="accept" /> */}
-          <div className="form-check">
-            <input
-              className="form-check-input"
-              type="checkbox"
-              value=""
-              id="accept"
-            ></input>
+          <div className="switch-register">
+            <p>I accept privacy terms and conditions </p>
+            {/* <input type="checkbox" value={"Accept"} id="accept" name="accept" /> */}
+            <div className="form-check">
+              <input
+                className="form-check-input"
+                type="checkbox"
+                value=""
+                id="accept"
+              ></input>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 export default Resgister;

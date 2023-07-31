@@ -41,12 +41,11 @@ const login = async function (req, res, next) {
 
     const token = jwt.sign(
       {
-        id: user._id.toString()
-      }, "process.env.SECRET_KEY"
+        id: user._id,
+        role: user.role
+      },
+      "secretKey"
     );
-    user.tokens = user.tokens.concat(token)
-    await user.save()
-
     const { password, ...info } = user._doc;
     res
       .cookie("accessToken", token, {
@@ -58,6 +57,7 @@ const login = async function (req, res, next) {
     next(err);
   }
 };
+
 
 const getUser = async function (req, res) {
   try {

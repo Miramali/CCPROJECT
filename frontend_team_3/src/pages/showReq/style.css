@@ -1,9 +1,337 @@
-.RequestMentor2 {
+/* .RequestMentor2 {
     text-transform: capitalize;
 }
 
 .Left-Request {
     padding-top: 40%;
+}
+
+.blue-color {
+    color: #007580 !important;
+}
+
+
+.Right-Request {
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+    overflow: hidden;
+    background-color: rgb(243, 243, 243);
+    overflow: hidden;
+    box-shadow: rgba(40, 42, 46, 0.25) 0px 4px 8px -2px, rgba(41, 44, 50, 0.08) 0px 0px 0px 1px;
+    position: relative;
+    z-index: 1;
+}
+
+.Right-Request::before {
+    background-color: #EAF5F1;
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 44%;
+    bottom: 0rem;
+    left: 0rem;
+    padding: 0;
+    margin: 0;
+}
+
+.Left-Request-Top {
+    overflow: hidden;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+
+.Left-Request-Top-container {
+    position: relative;
+}
+
+.Left-Request-Top-left span:nth-of-type(1) {
+    color: var(--Secondary);
+}
+
+.Left-Request-Top-left-title-res2 {
+    color: black !important;
+}
+
+.nameh5span {
+    color: var(--Secondary);
+}
+
+.right-green-title {
+    background-color: #007580;
+    border-radius: 0.1rem 0.1rem 0.1rem 8rem;
+    -webkit-border-radius: 0.1rem 0.1rem 0.1rem 8rem;
+    -moz-border-radius: 0.1rem 0.1rem 0.1rem 8rem;
+    -ms-border-radius: 0.1rem 0.1rem 0.1rem 8rem;
+    -o-border-radius: 0.1rem 0.1rem 0.1rem 8rem;
+    width: 38%;
+}
+
+.Left-Request-Top-right {
+    margin-left: auto;
+    margin-right: 4%;
+    margin-top: 1%;
+}
+
+.Left-Request-Top-right button {
+    background-color: #FED049;
+    width: 60%;
+    color: black;
+    border-radius: 5rem;
+    -webkit-border-radius: 5rem;
+    -moz-border-radius: 5rem;
+    -ms-border-radius: 5rem;
+    -o-border-radius: 5rem;
+    transition: all 0.3s ease;
+}
+
+.Left-Request-Top-right:hover button {
+    background-color: #e7bc3c;
+}
+
+
+.Left-Request-Top-left p {
+    margin-top: 11%;
+    padding-bottom: 4%;
+}
+
+.Left-Request-Top-left-list {
+    width: 90%;
+}
+
+.Left-Request-Top-left-list span:nth-of-type(3) {
+    color: var(--Secondary);
+}
+
+.RequestMentor2 .Right-Request .Left-Request-Top-left-list {
+    margin-bottom: 6%;
+}
+
+.RequestMentor2 .Right-Request .Left-Request-Top-left-list ul {
+    list-style: none;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.Left-Request-Top-left-parags h6 {
+    color: var(--Secondary);
+}
+
+.about-container {
+    text-transform: capitalize;
+}
+
+.about-box {
+    border-radius: 1rem;
+    background-color: white;
+}
+
+.about-container h4 {
+    color: var(--Secondary);
+}
+
+.left-aboutBox {
+    width: 69%;
+}
+
+.left-aboutBox ul {
+    list-style: none;
+}
+
+.left-aboutBox-left ul,
+.left-aboutBox-right ul {
+    margin: 0;
+    padding: 0;
+}
+
+.left-aboutBox-left ul li,
+.left-aboutBox-right ul li {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0;
+    padding-left: 0;
+    margin-bottom: 4%;
+}
+
+.right-aboutBox {
+    width: 29%;
+}
+
+.right-aboutBox-btm button {
+    background-color: var(--Primary);
+    width: 9rem;
+    text-transform: capitalize;
+    color: black;
+    border-radius: 5rem;
+    -webkit-border-radius: 5rem;
+    -moz-border-radius: 5rem;
+    -ms-border-radius: 5rem;
+    -o-border-radius: 5rem;
+    transition: all 0.3s ease;
+}
+
+.right-aboutBox-btm button:hover {
+    background-color: #e7bc3c;
+}
+
+.right-aboutBox-btm .pfoImg {
+    background-color: #D9D9D9;
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    overflow: hidden;
+}
+
+.left-aboutBox-btm h6 {
+    color: var(--Secondary);
+}
+
+.left-ul-span,
+.right-ul-span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+}
+
+.right-ul,
+.left-ul {
+    width: 33%;
+
+}
+
+.right-ul li,
+.left-ul li {
+    margin: 4% 0;
+}
+
+
+@media screen and (max-width:567px) {
+
+    .Right-Request {
+        font-size: small;
+        width: 98%;
+    }
+
+    .Left-Request-Top {
+        font-size: small;
+        width: 96%;
+    }
+
+    .Left-Request-Top-container {
+        width: 98%;
+    }
+
+    .Left-Request-Top-left {
+        width: 98%;
+    }
+
+    .right-green-title {
+        width: 66%;
+    }
+
+    .Left-Request-Top-left p {
+        width: 96%;
+    }
+
+    .Left-Request-Top-right {
+        top: 86%;
+        right: 12%;
+        width: 100%;
+    }
+
+    .Left-Request-Top-right button {
+        width: 100%;
+    }
+
+    .about-box {
+        flex-direction: column;
+        margin: 0 !important;
+    }
+
+    .left-aboutBox,
+    .right-aboutBox {
+        width: 99%;
+        flex-direction: column;
+    }
+
+    .left-aboutBox-top {
+        flex-direction: column;
+    }
+
+    .left-aboutBox-left,
+    .left-aboutBox-right {
+        width: 99%;
+    }
+
+    .Left-Request-Top-left,
+    .right-aboutBox,
+    .right-aboutBox-btm {
+        flex-direction: row;
+    }
+
+    .left-ul-span,
+    .right-ul-span {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        margin-right: auto;
+        width: 96%;
+    }
+
+    .left-ul li,
+    .right-ul li {
+        width: 99%;
+    }
+
+    .Left-Request-Top-left-list {
+        width: 99%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+
+    .left-ul,
+    .right-ul {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        margin-right: auto;
+        background-color: rgb(97, 120, 118);
+    }
+
+    .RequestMentor2 .Right-Request .Left-Request-Top-left-list ul {
+        flex-direction: row-reverse;
+        width: 90%;
+    }
+
+    .left-ul-span span:nth-child(3) {
+        color: black;
+    }
+} */
+
+
+
+.RequestMentor2 {
+    text-transform: capitalize;
+}
+
+.Left-Request {
+    padding-top: 10%;
 }
 
 .blue-color {
@@ -50,6 +378,7 @@
 
 .Left-Request-Top-container {
     position: relative;
+    padding-left: 30px;
 }
 
 .Left-Request-Top-left span:nth-of-type(1) {
@@ -63,6 +392,7 @@
 .nameh5span {
     color: var(--Secondary);
 }
+
 
 .right-green-title {
     background-color: #007580;
@@ -226,6 +556,7 @@
     .Right-Request {
         font-size: small;
         width: 98%;
+
     }
 
     .Left-Request-Top {
@@ -337,4 +668,127 @@
     .left-ul-span span:nth-child(3) {
         color: black;
     }
+}
+
+/* //////////////////////////////////////// */
+.listOfExperience,
+.listOfInfo,
+.descriptionOfPerson {
+    padding-left: 50px;
+    margin-bottom: 50px;
+}
+
+.descriptionOfPerson p {
+    width: 80%;
+
+}
+
+
+
+/* /////////////////////////////// */
+.title-info {
+    /* padding-left: 50px; */
+    font-size: 22px;
+    /* margin-bottom: -20px; */
+}
+
+.box-info {
+    margin-top: 0px;
+
+}
+
+.box-info .box-info-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.box-info .box-info-container .box-info-left {
+    display: flex;
+    justify-content: space-between;
+
+
+}
+
+.box-info-right {
+    width: 40%;
+}
+
+
+
+
+
+
+
+.sectionComment .singleComment {
+    display: flex;
+    gap: 20px;
+    border-bottom: 0.5px solid rgb(233, 233, 233);
+    margin-bottom: 15px;
+}
+
+.secondBetween {
+    padding-left: 40px;
+}
+
+.sectionComment .singleComment .commentContent {
+    padding-right: 60px;
+}
+
+.sectionComment .singleComment .commentContent h4 {
+    font-size: 18px;
+    margin-bottom: 0px;
+    font-weight: 700;
+}
+
+.sectionComment .singleComment .commentContent p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: rgb(102, 102, 102);
+}
+
+.postComment {
+    margin-bottom: 50px;
+}
+
+.postComment form input::placeholder {
+    color: rgb(214, 214, 214);
+    font-size: 15px;
+}
+
+.postComment form .btnContainer {
+    text-align: right;
+}
+
+.postComment form .btnComment {
+    color: white;
+    font-size: 25px;
+    margin-top: 20px;
+    background-color: #024a6e;
+    width: 120px;
+    border-radius: 20px;
+}
+
+.allBoxContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.justify-content-end {
+    max-width: -8px;
+}
+
+.smBoxLeft {
+    width: 80%;
+    display: flex;
+}
+
+.smBoxLeft {
+    width: 20%;
+    display: block;
+    flex-direction: column;
 }

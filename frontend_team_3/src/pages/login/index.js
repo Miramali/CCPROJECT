@@ -6,13 +6,14 @@ import {
   FaGoogle,
   FaExclamationTriangle,
 } from "react-icons/fa";
-// new
+
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import axios from "axios";
 import { Localhost } from "../../config/api";
 import { loginFailure, loginStart, loginSuccess } from "../../features/user";
 import { Error, Success } from "../../components/Toast";
+import Logo from "../../components/logo";
 
 export const Login = (props) => {
   const dispatch = useDispatch();
@@ -120,70 +121,73 @@ export const Login = (props) => {
   };
 
   return (
-    <div className="parent">
-      <div className="auth-form-container">
-        <h2>Login</h2>
-        <form className="login-form d-flex flex-column" onSubmit={handleSubmit}>
-          <div className="pass-container">
-            <input
-              className="inp-field"
-              value={email}
-              onChange={changeEmailInput}
-              type="email"
-              placeholder="Email"
-              id="email"
-              name="email"
-              required
-            />
-            <FaExclamationTriangle id="error1" className="error-triangle" />
+    <div>
+      <Logo/>
+      <div className="all">
+        <div className="auth-form-container item">
+          <h3>Login</h3>
+          <form className="login-form d-flex flex-column form" onSubmit={handleSubmit}>
+            <div className="pass-container">
+              <input
+                className="inp-field"
+                value={email}
+                onChange={changeEmailInput}
+                type="email"
+                placeholder="Email"
+                id="email"
+                name="email"
+                required
+              />
+              <FaExclamationTriangle id="error1" className="error-triangle" />
+            </div>
+            <div className="pass-container">
+              <input
+                className="inp-field pass"
+                value={pass}
+                onChange={changePassInput}
+                type={passType}
+                placeholder="Password"
+                id="password"
+                name="password"
+                required
+              />
+              <span id="icon-pass-1" className="toggle" onClick={togglePassword}>
+                {show}
+              </span>
+              <FaExclamationTriangle id="error2" className="error-triangle" />
+            </div>
+            <Link to={"/forgetpassword"} className="link-btn forget">
+              Forgot your password ?
+            </Link>
+            <button
+              className="btn rounded-pill m-auto my-3 log"
+              type="submit"
+              onClick={checkAuth}
+            >
+              <p className="text-white button">Login</p>
+            </button>
+          </form>
+          <div className="login-social">
+            <p style={{ fontSize: "18px" }}>Or login with </p>
+            <button className="soc-log-btn" onClick={github}>
+              <FaLinkedinIn />
+            </button>
+            <button className="soc-log-btn" onClick={google}>
+              <FaGoogle />
+            </button>
+            <button className="soc-log-btn" onClick={facebook}>
+              <FaFacebookF />
+            </button>
           </div>
-          <div className="pass-container">
-            <input
-              className="inp-field pass"
-              value={pass}
-              onChange={changePassInput}
-              type={passType}
-              placeholder="Password"
-              id="password"
-              name="password"
-              required
-            />
-            <span id="icon-pass-1" className="toggle" onClick={togglePassword}>
-              {show}
-            </span>
-            <FaExclamationTriangle id="error2" className="error-triangle" />
+          <div className="switch1">
+            <p style={{ fontSize: "15px" }}>Not a member yet ? </p>
+            <button
+              className="link-btn"
+              onClick={() => props.onFormSwitch("register")}
+            >
+              click here to sign up
+            </button>
           </div>
-          <Link to={"/forgetpassword"} className="link-btn">
-            Forgot your password ?
-          </Link>
-          <button
-            className="btn rounded-pill m-auto my-3 log"
-            type="submit"
-            onClick={checkAuth}
-          >
-            <p className="btn text-white">Login</p>
-          </button>
-        </form>
-        <div className="login-social d-flex">
-          <p style={{ fontSize: "18px" }}>Or login with </p>
-          <button className="soc-log-btn" onClick={github}>
-            <FaLinkedinIn />
-          </button>
-          <button className="soc-log-btn" onClick={google}>
-            <FaGoogle />
-          </button>
-          <button className="soc-log-btn" onClick={facebook}>
-            <FaFacebookF />
-          </button>
-        </div>
-        <div className="switch1">
-          <p style={{ fontSize: "15px" }}>Not a member yet ? </p>
-          <button
-            className="link-btn"
-            onClick={() => props.onFormSwitch("register")}
-          >
-            click here to sign up
-          </button>
         </div>
       </div>
     </div>

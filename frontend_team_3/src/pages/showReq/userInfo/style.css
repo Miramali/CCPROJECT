@@ -1,0 +1,19 @@
+.all {
+    margin-top: -60px;
+}
+
+.allinfo p {
+    margin-left: 50px;
+}
+
+.userAvatar {
+    margin-top: 20px;
+}
+
+.box-info-right {
+    margin-bottom: 33px;
+}
+
+.box-info .box-info-container .box-info-left {
+    justify-content: space-evenly;
+}

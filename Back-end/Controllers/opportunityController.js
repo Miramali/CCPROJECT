@@ -4,8 +4,8 @@ const getAllOpportunities = async (req, res) => {
     try {
         const page = req.query.page * 1 || 1;
         const limit = req.query.limit * 1 || 5;
-        const skip = (page - 1) * limit;
-        const allOpportunity = await Opportunity.find().skip(skip).limit(limit);
+        // const skip = (page - 1) * limit;
+        const allOpportunity = await Opportunity.find()
         res.status(200).json({ results: allOpportunity.length, page, data: allOpportunity });
     } catch (error) {
         res.status(500).json(error.message);
@@ -17,6 +17,10 @@ const getOpportunityById = async (req, res) => {
         const _id = req.params.id;
         const opportunity = await Opportunity
             .findById(_id)
+            .populate({
+                path: "owner profile",
+                select: "-tokens",
+              })
         if (!opportunity) {
             return res.status(404).send({ msg: ` No opportunity for this id ${_id}` });
         }
@@ -49,7 +53,7 @@ const createOpportunity = async (req, res) => {
         const opportunity = new Opportunity({
             ...req.body,
             owner: req.user.id,
-            // profile: req.profile._id
+            profile: req.profile._id
         });
         opportunity.save()
         res.status(201).json(opportunity);
